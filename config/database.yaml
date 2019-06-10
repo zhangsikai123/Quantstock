@@ -1,0 +1,7 @@
+---
+-
+  alias: stock
+  host:
+    - mongodb://sikai:Leili%40123@localhost/?authsource=admin
+  port: 27017
+  db: quant
