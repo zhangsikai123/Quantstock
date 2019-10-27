@@ -14,3 +14,9 @@ with open(_db, 'r') as yml_file:
     db_configs = yaml.load(yml_file)
     for config in db_configs:
         connect(**config)
+
+def reconnect():
+    with open(_db, 'r') as yml_file:
+        db_configs = yaml.load(yml_file)
+        for config in db_configs:
+            connect(**config)

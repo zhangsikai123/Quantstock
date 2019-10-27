@@ -2,10 +2,12 @@
 # -*- coding: utf-8 -*-
 # @Author  : sikai.zhang
 # @Time    : 5/19/19 7:23 PM
-from mongoengine import Document, StringField, FloatField, DateTimeField
+from mongoengine import StringField, FloatField, DateTimeField
+
+from core.DBDocument import DBDocument
 
 
-class SoHuStock(Document):
+class SoHuStock(DBDocument):
     code = StringField(required=True)
     cn_name = StringField()
     date = DateTimeField(required=True)  # 日期
@@ -27,6 +29,7 @@ class SoHuStock(Document):
     @classmethod
     def create(cls,
                code,
+               cn_name,
                date,
                open,
                close,
@@ -41,6 +44,7 @@ class SoHuStock(Document):
                ):
         data = dict(
             code=code,
+            cn_name=cn_name,
             date=date,
             open=open,
             close=close,

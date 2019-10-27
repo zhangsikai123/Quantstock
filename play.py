@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 # @Author  : sikai.zhang
 # @Time    : 5/19/19 7:22 PM
-import json
 import requests
 import ujson as ujson
 
@@ -37,6 +36,7 @@ def sohu_stock_collect_data(code):
     body = ujson.loads(body[21:-2])[0]
     return len(body['hq'])
 
+
 def task(args):
     for a in args:
         print(a)
@@ -47,4 +47,3 @@ if __name__ == '__main__':
         for l in f:
             code = l[:6]
             sohu_stock_collect_data(code)
-
